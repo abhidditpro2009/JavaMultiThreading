@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Supplier;
 
-public class Tester {
+public class TestCompletableFuture {
 	
 	static Runnable runnableTask ;
 	static Callable<String> callableTask ;
@@ -13,7 +13,7 @@ public class Tester {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Tester test = new Tester();
+		TestCompletableFuture test = new TestCompletableFuture();
 		
 		test.init();
 		

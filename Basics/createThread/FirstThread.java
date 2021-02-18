@@ -41,6 +41,23 @@ public class FirstThread implements Runnable {
 					});
 		
 		thread4.start();
+		
+		// let these threads finish before main thread
+		
+		try {
+			
+			thread1.join();
+			thread2.join();
+			thread3.join();
+			thread4.join();
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("Main Thread finished");
+		
 	}
 }
 
