@@ -121,7 +121,8 @@ public class ExecutorFutureBasics {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	
+		executor.shutdown();
 	}
 	
 }

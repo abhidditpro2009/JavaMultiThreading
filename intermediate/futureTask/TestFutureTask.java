@@ -35,7 +35,8 @@ public class TestFutureTask {
 		}
 		
 		System.out.println("Is task completed: "+futureTask.isDone());
-
+		executor.shutdown();
+		
 	}
 
 }
