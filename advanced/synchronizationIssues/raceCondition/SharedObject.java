@@ -1,4 +1,4 @@
-package synchronizationIssues.raceCondition;
+package advanced.synchronizationIssues.raceCondition;
 public class SharedObject {
 
 		private int count = 0;

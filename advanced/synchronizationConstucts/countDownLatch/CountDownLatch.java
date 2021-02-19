@@ -1,4 +1,4 @@
-package synchronizationConstucts.countDownLatch;
+package advanced.synchronizationConstucts.countDownLatch;
 
 public class CountDownLatch {
 

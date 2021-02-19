@@ -1,4 +1,4 @@
-package synchronizationConstucts.semaphore;
+package advanced.synchronizationConstucts.semaphore;
 
 public class BinarySemaphore implements SemaphoreInterface{
 

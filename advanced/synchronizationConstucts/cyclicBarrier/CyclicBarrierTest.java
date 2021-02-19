@@ -1,4 +1,4 @@
-package synchronizationConstucts.cyclicBarrier;
+package advanced.synchronizationConstucts.cyclicBarrier;
 
 public class CyclicBarrierTest {
 

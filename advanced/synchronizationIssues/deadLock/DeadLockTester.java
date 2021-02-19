@@ -1,4 +1,4 @@
-package synchronizationIssues.deadLock;
+package advanced.synchronizationIssues.deadLock;
 
 public class DeadLockTester {
 	
