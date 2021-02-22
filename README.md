@@ -1,6 +1,5 @@
 <h1><b>Java Multithreading</b></h1>
  
-https://docs.google.com/document/d/1i-aQiEwYpFvLMD_ypTPdwfdViA9YsJ0WB1vsPRwJQ5s/edit
  
 <h3><b>What is a thread ?</b></h3>
  
