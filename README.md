@@ -45,7 +45,7 @@
  
     Thread thread3 = new Thread( () -> { System.out.println("Best thread started"); );
  
-    thread4.start();
+    thread3.start();
  
 <h3><b>What are the different states of thread life cycle ? </b></h3>
  
