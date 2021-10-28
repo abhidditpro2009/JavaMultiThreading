@@ -77,7 +77,10 @@
  
 <h3><b>What are the common problems with multi-threading while trying to access a shared resource ?</b></h3>
  
-*   RaceCondition DeadLock Starvation LiveLock
+*   RaceCondition 
+*   DeadLock 
+*   Starvation 
+*   LiveLock
  
 <h3><b>What is a Race Condition ? </b></h3>
  
@@ -87,7 +90,7 @@
  
 *    The two scenarios under which race conditions occur are "Check then act" and "read-modify-write".
  
-check-then-act:
+-> check-then-act:
  
 *    Usually the value of a variable is checked and then an action is taken. Without proper synchronization, the resulting code can have a race condition. An example is below:
  
@@ -99,9 +102,8 @@ check-then-act:
  
     }
  
-    
- 
-    Read-modify-write:
+-> Read-modify-write:
+
 For instance, whenever a counter variable is incremented, the old state of the counter undergoes a transformation to a new state.
  
 Without proper synchronization guards, the counter increment operation can become a race condition.
