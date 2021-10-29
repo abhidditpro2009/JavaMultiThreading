@@ -146,7 +146,7 @@ Without proper synchronization guards, the counter increment operation can becom
  
 <h3><b>What is a Semaphore ?</b></h3>
  
-*    A semaphore is a mechanism which gives permits to the threads. It has two methods: acquire and release. Permits are issued to thread on calling acquired. Threads are supposed to release permits on calling release. The threads do not lock when they receive permits. If a thread tries to acquire permits after the maximum permits have been issued then it needs to wait. Alos ff a thread tries to release and no permits have been issued so far then it needs to wait.
+*    A semaphore is a mechanism which gives permits to the threads. It has two methods: acquire and release. Permits are issued to thread on calling acquired. Threads are supposed to release permits on calling release. The threads do not lock when they receive permits. If a thread tries to acquire permits after the maximum permits have been issued then it needs to wait. Also if a thread tries to release and no permits have been issued so far then it needs to wait.
  
 <h3><b>What are the different types of Semaphores ?</b></h3>
  
@@ -154,7 +154,7 @@ Without proper synchronization guards, the counter increment operation can becom
  
 *    Counting Semaphore - It only has a lower bound but doesn't have an upper bound on the number of permits.
  
-*    Bounder Semaphore - It has a lower and an upper bound on the number of permits being issued.
+*    Bounded Semaphore - It has a lower and an upper bound on the number of permits being issued.
  
 <h3><b>What is a Monitor ?</b></h3>
  
@@ -170,7 +170,10 @@ Without proper synchronization guards, the counter increment operation can becom
  
 <h3><b>What problems need to be avoided while designing monitors ?</b></h3>
  
-*   Missed Signals Busy Waiting Slipped Condition Spurious Wakeup
+*   Missed Signals
+*   Busy Waiting 
+*   Slipped Condition 
+*   Spurious Wakeup
  
 <h3><b>How are monitors implemented in Java ?</b></h3>
  
