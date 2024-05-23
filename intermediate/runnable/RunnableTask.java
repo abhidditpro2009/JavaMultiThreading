@@ -4,7 +4,6 @@ public class RunnableTask implements Runnable{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 		System.out.println(Thread.currentThread().getName() + " is starting to execute runnable Task");
 		
@@ -16,10 +15,6 @@ public class RunnableTask implements Runnable{
 		} catch (InterruptedException e) {
 			
 			System.out.println(Thread.currentThread().getName() + " has been interrupted while executing runnable Task");
-			
 		}
-		
-		
 	}
-
 }

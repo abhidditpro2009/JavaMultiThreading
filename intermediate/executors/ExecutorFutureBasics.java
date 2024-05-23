@@ -61,10 +61,7 @@ public class ExecutorFutureBasics {
 			String result = future1.get();
 			System.out.println(result);
 			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
+		} catch (InterruptedException | ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -79,10 +76,7 @@ public class ExecutorFutureBasics {
 			String result = futureTask.get();
 			System.out.println(result);
 			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
+		} catch (InterruptedException | ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -98,14 +92,10 @@ public class ExecutorFutureBasics {
 			String result = future2.get();
 			System.out.println(result);
 			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
+		} catch (InterruptedException | ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 		FutureTask<String> futureTask2 = new FutureTask<>(runnableTask2,"Hello runnableTask");
 		executor.submit(futureTask2);
@@ -114,16 +104,11 @@ public class ExecutorFutureBasics {
 			String result = futureTask2.get();
 			System.out.println(result);
 			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
+		} catch (InterruptedException | ExecutionException  e) {
 			e.printStackTrace();
 		}
 	
 		executor.shutdown();
 	}
-	
 }
 

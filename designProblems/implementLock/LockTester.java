@@ -12,17 +12,17 @@ public class LockTester {
 		
 		test.init();
 		
-		Thread t1 = new Thread( () -> { test.criticalSection(); }, "Thread1");
+		Thread t1 = new Thread(test::criticalSection, "Thread1");
 		
-		Thread t2 = new Thread( () -> {	test.criticalSection(); }, "Thread2");
+		Thread t2 = new Thread(test::criticalSection, "Thread2");
 		
-		Thread t3 = new Thread( () -> { test.criticalSection(); }, "Thread3");
+		Thread t3 = new Thread(test::criticalSection, "Thread3");
 		
-		Thread t4 = new Thread( () -> { test.criticalSection(); }, "Thread4");
+		Thread t4 = new Thread(test::criticalSection, "Thread4");
 		
-		Thread t5 = new Thread( () -> {	test.criticalSection(); }, "Thread5");
+		Thread t5 = new Thread(test::criticalSection, "Thread5");
 		
-		Thread t6 = new Thread( () -> { test.criticalSection(); }, "Thread6");
+		Thread t6 = new Thread(test::criticalSection, "Thread6");
 		
 		t1.start();
 		t2.start();
@@ -38,7 +38,6 @@ public class LockTester {
 		t5.join();
 		t6.join();
 
-		
 		System.out.println("Main Thread finished");
 	}
 	
@@ -47,7 +46,6 @@ public class LockTester {
 		System.out.println("Current lock Mode: "+ lockMode);
 		
 		switch(lockMode) {
-		
 			case 1:
 				lock =  new SimpleLock();
 				break;
@@ -65,7 +63,6 @@ public class LockTester {
 				break;
 		
 		}
-		
 	}
 	
 	public  void criticalSection() {
@@ -77,25 +74,26 @@ public class LockTester {
 			
 			System.out.println("Thread name: "+ Thread.currentThread().getName() +" Task "+i);
 			
-			if(lockMode == 2 || lockMode == 4)
+			if(lockMode == 2 || lockMode == 4) {
 				secondCriticalSection();
+			}
 		}
 		
-		if(lockMode != 0)
+		if(lockMode != 0) {
 			lock.unlock();
+		}
 	}
 	
 	public  void secondCriticalSection() {
 		
-		if(lockMode != 0)
+		if(lockMode != 0) {
 			lock.lock();
+		}
 
 		System.out.println("Thread name: "+ Thread.currentThread().getName() +" Thread priority "+ Thread.currentThread().getPriority());
 		
-		if(lockMode != 0)
+		if(lockMode != 0) {
 			lock.unlock();
+		}
 	}
-	
-	
-	
 }

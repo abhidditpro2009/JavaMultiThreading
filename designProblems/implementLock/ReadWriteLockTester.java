@@ -8,59 +8,25 @@ public class ReadWriteLockTester {
 	static final int  WRITE = 1;
 	
 	public static void main(String[] args) throws InterruptedException {
-	
-		
-		
+
 		ReadWriteLockTester test = new ReadWriteLockTester();
 		
-		Thread read1 = new Thread( () -> {
-
-			test.criticalSection(READ);
-
-		});
+		Thread read1 = new Thread( () -> test.criticalSection(READ));
 		
-		Thread read2 = new Thread( () -> {
-			
-			test.criticalSection(READ);
-			
-		});
+		Thread read2 = new Thread( () -> test.criticalSection(READ));
 		
-		Thread read3 = new Thread( () -> {
-			
-			test.criticalSection(READ);
-			
-		});
+		Thread read3 = new Thread( () -> test.criticalSection(READ));
 		
-		Thread read4 = new Thread( () -> {
-			
-			test.criticalSection(READ);
-			
-		});
+		Thread read4 = new Thread( () -> test.criticalSection(READ));
 		
-		Thread read5 = new Thread( () -> {
-			
-			test.criticalSection(READ);
-			
-		});
+		Thread read5 = new Thread( () -> test.criticalSection(READ));
 
 		
-		Thread write1 = new Thread( () -> {
-
-			test.criticalSection(WRITE);
-
-		});
+		Thread write1 = new Thread( () -> test.criticalSection(WRITE));
 		
-		Thread write2 = new Thread( () -> {
-			
-			test.criticalSection(WRITE);
-			
-		});
+		Thread write2 = new Thread( () -> test.criticalSection(WRITE));
 		
-		Thread write3 = new Thread( () -> {
-			
-			test.criticalSection(WRITE);
-			
-		});
+		Thread write3 = new Thread( () -> test.criticalSection(WRITE));
 		
 		read1.start();
 		write1.start();

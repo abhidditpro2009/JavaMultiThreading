@@ -4,16 +4,13 @@ public class FirstThread implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 		System.out.println("Thread started");
 	}
 
 	
 	public static void main(String[] args) {
-		
-		
-		
+
 		FirstThread obj = new FirstThread();
 		Thread thread1 = new Thread(obj);
 		thread1.start();
@@ -52,7 +49,6 @@ public class FirstThread implements Runnable {
 			thread4.join();
 			
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

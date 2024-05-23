@@ -1,7 +1,6 @@
 package designProblems.implementCallback;
 
 public class SynchronousCallback {
-
 	private CallbackInterface callbackInteface;
 	
 	SynchronousCallback(CallbackInterface callbackInteface){

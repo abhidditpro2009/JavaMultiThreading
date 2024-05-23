@@ -12,16 +12,12 @@ public class TestCompletableFuture {
 	static Supplier<String> supplierTask;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		TestCompletableFuture test = new TestCompletableFuture();
 		
 		test.init();
 		
 		test.testSupplierTask();
-		
-		 
-		
 	}
 
 	public void init() {
@@ -36,7 +32,6 @@ public class TestCompletableFuture {
 									try {
 										Thread.sleep(5000);
 									} catch (InterruptedException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
 									
@@ -68,11 +63,9 @@ public class TestCompletableFuture {
 										System.out.println(Thread.currentThread().getName() + " has completed to execute supplier Task");
 										
 									} catch (InterruptedException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
-									
-									
+
 									return "Hello callableTask";
 								};
 	}
@@ -89,21 +82,16 @@ public class TestCompletableFuture {
 			System.out.println("Blocking get complete for runnable task");
 			
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void testCallableTask() {
 		
 		// A runnable Task can be run using runAsync method of completable Future
-		
-		
-		
+
 		try {
 			CompletableFuture<String> cmpFuture =  CompletableFuture.supplyAsync((Supplier<String>) callableTask);
 		}
@@ -124,13 +112,10 @@ public class TestCompletableFuture {
 			System.out.println("Blocking get complete for supplier task");
 			
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }
 

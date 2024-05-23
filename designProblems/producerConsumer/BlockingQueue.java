@@ -51,6 +51,4 @@ public class BlockingQueue {
 		
 		return x;
 	}
-	
-	
 }

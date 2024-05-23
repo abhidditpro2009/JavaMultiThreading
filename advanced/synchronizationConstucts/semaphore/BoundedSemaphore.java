@@ -11,33 +11,32 @@ public class BoundedSemaphore implements SemaphoreInterface {
 	
 	@Override
 	public void acquire() {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
-			 while(count == max)
-				try {
-					this.wait();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			 while(count == max) {
+				 try {
+					 this.wait();
+				 } catch (InterruptedException e) {
+					 e.printStackTrace();
+				 }
+			 }
 			 
 			 count++;
-			 this.notify();
+			 this.notifyAll();
 		}
 	}
 
 	@Override
 	public void release() throws InterruptedException {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
 			
-			 while(count == 0)
-				this.wait();
+			 while(count == 0) {
+				 this.wait();
+			 }
 				 
-			 	count--;
-			 	this.notify();
+			 count--;
+			 this.notifyAll();
 		}
 	}
 }

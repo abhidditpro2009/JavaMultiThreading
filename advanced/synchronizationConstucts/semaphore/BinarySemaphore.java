@@ -6,25 +6,21 @@ public class BinarySemaphore implements SemaphoreInterface{
 
 	@Override
 	public  void acquire() {
-		// TODO Auto-generated method stub
 
 		signal = true;
 		this.notify();
-		
 	}
 	
 	@Override
 	public  void release() throws InterruptedException {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
 			
-			while(!signal) 	
+			while(!signal) {
 				this.wait();
+			}
 			
 			signal = false;
 		}
 	}
-
-
 }

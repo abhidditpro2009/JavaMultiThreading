@@ -12,20 +12,17 @@ public class ReadWriteLock {
 			try {
 				wait();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		
 		readers++;
-		
 	}
 	
 	public synchronized void unlockRead() {
 		
 		readers--;
 		notifyAll();
-		
 	}
 	
 	public synchronized void lockWrite() {

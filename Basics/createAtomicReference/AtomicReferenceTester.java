@@ -7,9 +7,7 @@ public class AtomicReferenceTester {
 	public static void main(String args[]) throws InterruptedException {
 		
 		AtomicReference<String> reference = new AtomicReference<String>("Hello");
-		
-		
-		
+
 		System.out.println(reference.get());
 		
 		Thread thread1 = new Thread(() -> 	{ 

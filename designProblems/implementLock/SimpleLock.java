@@ -17,7 +17,6 @@ public class SimpleLock implements LockInterface {
 				try {
 					this.wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -31,7 +30,7 @@ public class SimpleLock implements LockInterface {
 		synchronized(this) {
 			
 			isLocked = false;
-			this.notify();
+			this.notifyAll();
 		}
 	}
 }

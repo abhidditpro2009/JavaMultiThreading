@@ -4,16 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
-
 	public static void main(String[] args) {
 		
 		Test test = new Test();
 		
 		ThreadPool threadPool = new ThreadPool(Constants.PRIORITY_QUEUE,4,100);
-		
-		/*threadPool.executeTask(() -> {System.out.println("Hello World 1"); Thread.sleep(5000);},"task1");
-		threadPool.executeTask(() -> {System.out.println("Hello World 2");},"task2");
-		threadPool.executeTask(() -> {System.out.println("Hello World 3");},"task3");*/
 		
 		List<Task> taskList = new ArrayList<Task>();
 		
@@ -25,7 +20,6 @@ public class Test {
 			task.setTaskPayload(()->{ System.out.println(" Hello World ");});
 			taskList.add(task);
 		}
-		
 		// execute all tasks
 		
 		threadPool.executeAllTasks(taskList);
@@ -34,8 +28,7 @@ public class Test {
 		
 		Thread finishAllTasks = new Thread(() -> {threadPool.waitToFinishAllTasks();});
 		finishAllTasks.start();
-		
-		
+
 		// suspend the main thread for 5 ms
 		
 		test.suspendMainThread();
@@ -45,11 +38,6 @@ public class Test {
 		
 		Thread cancelAllTasks = new Thread(() -> {threadPool.cancelAllTasks();});
 		cancelAllTasks.start();
-		
-		
-		
-		
-		//threadPool.startAllWorkerThreads();
 		
 		// suspend the main thread for 5 ms
 		
@@ -68,12 +56,7 @@ public class Test {
 		finishAllTasks2.start();
 		
 		// suspend the main thread for 5 ms
-		
-		/*test.suspendMainThread();
-		
-		Thread stopAllTasks = new Thread(() -> {threadPool.stopAllTasks();});
-		stopAllTasks.start();*/
-		
+
 		try {
 		
 			//System.out.println("Joined");
@@ -107,15 +90,12 @@ public class Test {
 		threadPool.executeAllTasks(taskList);
 		
 	}
-	
 	public void suspendMainThread() {
 		
 		try {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
 }

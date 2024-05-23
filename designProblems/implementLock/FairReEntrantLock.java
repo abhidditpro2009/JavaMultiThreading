@@ -5,7 +5,6 @@ import java.util.*;
 public class FairReEntrantLock implements LockInterface{
 
 	Queue<SimpleLock> waitQueue = new LinkedList<>();
-
 	boolean locked = false;
 	Thread lockingThread = null;
 	int lockCount = 0;
@@ -13,8 +12,7 @@ public class FairReEntrantLock implements LockInterface{
 	
 	@Override
 	public void lock() {
-		// TODO Auto-generated method stub
-		
+
 		SimpleLock waitLock = new SimpleLock();
 		
 		if(lockingThread == Thread.currentThread()) {
@@ -42,12 +40,10 @@ public class FairReEntrantLock implements LockInterface{
 				System.out.println("Lock obtained by Thread name: "+ Thread.currentThread().getName());
 				waitQueue.poll();
 		}
-		
 	}
 
 	@Override
 	public void unlock() {
-		// TODO Auto-generated method stub
 		
 		if(locked && lockingThread == Thread.currentThread()) {
 			
@@ -66,11 +62,9 @@ public class FairReEntrantLock implements LockInterface{
 						SimpleLock waitLock = waitQueue.peek();
 						System.out.println("Unlocking Thread name: "+ Thread.currentThread().getName()+ " | lock hashcode: "+ waitLock.hashCode());				
 						waitLock.unlock();
-		
 					}
 				}
 			}
 		}
 	}
-	
 }

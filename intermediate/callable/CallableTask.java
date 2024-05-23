@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 public class CallableTask implements Callable<String> {
 
 	@Override
-	public String call() throws Exception {
+	public String call() {
 		
 		System.out.println(Thread.currentThread().getName() + " is starting to execute runnable Task");
 		

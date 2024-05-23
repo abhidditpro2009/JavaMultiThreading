@@ -13,20 +13,20 @@ public class QueueFactory {
 	private Queue<Task> blockingQueue = null;
 	private Queue<Task> priorityQueue = null;
 	
-	
 	public Queue getQueue(String type, int capacity) {
 		
 		blockingQueue = new ArrayBlockingQueue<Task>(capacity);
-		
-		
+
 		Comparator<Task> taskSorter = Comparator.comparing(Task::getPriority);
 		priorityQueue = new PriorityQueue<Task>(capacity,taskSorter);
 		
-		if(type.equals("blocking"))
+		if(type.equals("blocking")) {
 			return blockingQueue;
+		}
 		 
-		if(type.equals("priority"))
+		if(type.equals("priority")) {
 			return priorityQueue;
+		}
 		
 		return null;
 	}

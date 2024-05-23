@@ -12,7 +12,6 @@ public class NonBlockingQueue {
 	AtomicBoolean lock ;
 	
 	public NonBlockingQueue(int n) {
-		
 		queue = new int[n];
 		capacity = n;
 		lock = new AtomicBoolean(false);
@@ -31,12 +30,12 @@ public class NonBlockingQueue {
 			
 			rear.incrementAndGet();
 			
-			if(rear.get() == capacity)
+			if(rear.get() == capacity) {
 				rear.set(0);
+			}
 			
 			if(count.get() < capacity) {
-				
-				
+
 				System.out.println("Thread "+ Thread.currentThread().getName()+ " added "+ x +" to the queue" );
 				queue[rear.get()] = x;
 				count.incrementAndGet();
@@ -49,10 +48,8 @@ public class NonBlockingQueue {
 				System.out.println("Thread "+ Thread.currentThread().getName() + " is blocked");
 		
 				lock.set(false);
-				
 			}
 		}
-		
 	}
 	
 	public int poll()  {

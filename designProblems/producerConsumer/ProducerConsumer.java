@@ -50,36 +50,20 @@ public class ProducerConsumer {
 	}
 	
 	public  void produce() {
-		
-		//try {
-			
-			for(int i=0;i<5;i++) {
-			
-				count = count+i;
-				System.out.println("Thread "+ Thread.currentThread().getName()+" attempting to add " +count+" to the queue");
-				queue.add(count);
-			}
-			
-		/*} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		
+
+		for(int i=0;i<5;i++) {
+
+			count = count+i;
+			System.out.println("Thread "+ Thread.currentThread().getName()+" attempting to add " +count+" to the queue");
+			queue.add(count);
+		}
 	}
 	
 	public  void consume() {
-		
-		//try {
-			
-			for(int i=0;i<5;i++) {
-			
-				System.out.println("Thread "+ Thread.currentThread().getName()+ " attempting to remove "+ queue.poll() +" from the queue" );
-			}
-			
-		/*} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		
+
+		for(int i=0;i<5;i++) {
+
+			System.out.println("Thread "+ Thread.currentThread().getName()+ " attempting to remove "+ queue.poll() +" from the queue" );
+		}
 	}
 }

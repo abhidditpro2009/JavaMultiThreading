@@ -5,6 +5,7 @@ public class CountDownLatch {
 	int count = 0;
 	
 	public CountDownLatch(int count) {
+
 		this.count = count;
 	}
 	
@@ -15,7 +16,7 @@ public class CountDownLatch {
 		}
 	} 
 	
-	public synchronized void countDown() throws InterruptedException {
+	public synchronized void countDown() {
 		
 		count--;
 		

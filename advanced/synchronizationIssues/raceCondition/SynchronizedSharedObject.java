@@ -15,5 +15,4 @@ public class SynchronizedSharedObject {
 	public synchronized int getCount() {
 		return count;
 	}
-	
 }

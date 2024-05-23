@@ -1,14 +1,12 @@
 package designProblems.implementLock;
 
 public class ReEntrantLock implements LockInterface {
-
 	boolean isLocked = false;
 	Thread lockedBy = null;
 	int lockedCount = 0;
 	
 	@Override
 	public void lock() {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
 			
@@ -18,7 +16,6 @@ public class ReEntrantLock implements LockInterface {
 				try {
 					this.wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -31,7 +28,6 @@ public class ReEntrantLock implements LockInterface {
 
 	@Override
 	public void unlock() {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
 			

@@ -10,7 +10,6 @@ import intermediate.callable.CallableTask;
 public class TestFuture {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		CallableTask callableTask = new CallableTask();
 		
@@ -28,16 +27,12 @@ public class TestFuture {
 			
 			System.out.println(result);
 			
-		} catch (InterruptedException e) {
-			
-		} catch (ExecutionException e) {
+		} catch (InterruptedException | ExecutionException e) {
 			
 		}
 		
 		System.out.println("Is task completed: "+future.isDone());
 		
 		executor.shutdown();
-		
 	}
-
 }

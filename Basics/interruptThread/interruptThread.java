@@ -1,12 +1,9 @@
 package Basics.interruptThread;
 
-import Basics.createThread.FirstThread;
-
 public class interruptThread implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 		System.out.println(Thread.currentThread().getName() + " started");
 		
@@ -16,11 +13,8 @@ public class interruptThread implements Runnable {
 			System.out.println(Thread.currentThread().getName() + " finished");
 			
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			System.out.println(Thread.currentThread().getName() + " interrupted");
 		}
-		
-		
 	}
 
 	
@@ -57,13 +51,9 @@ public class interruptThread implements Runnable {
 			thread4.join();
 			
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+
 		System.out.println("Main Thread finished");
-		
 	}
 }

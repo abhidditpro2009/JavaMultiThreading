@@ -6,17 +6,15 @@ public class CountingSemaphore implements SemaphoreInterface {
 	
 	@Override
 	public void acquire() {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
 			count++;
-			this.notify();
+			this.notifyAll();
 		}
 	}
 
 	@Override
 	public void release() throws InterruptedException {
-		// TODO Auto-generated method stub
 		
 		synchronized(this) {
 			
@@ -25,9 +23,6 @@ public class CountingSemaphore implements SemaphoreInterface {
 			}
 				
 			count--;
-			
 		}
 	}
-
-	
 }

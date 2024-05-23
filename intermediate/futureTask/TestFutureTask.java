@@ -28,15 +28,11 @@ public class TestFutureTask {
 			
 			System.out.println(result);
 			
-		} catch (InterruptedException e) {
-			
-		} catch (ExecutionException e) {
+		} catch (InterruptedException | ExecutionException e) {
 			
 		}
 		
 		System.out.println("Is task completed: "+futureTask.isDone());
 		executor.shutdown();
-		
 	}
-
 }

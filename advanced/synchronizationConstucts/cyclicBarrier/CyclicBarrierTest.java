@@ -8,13 +8,11 @@ public class CyclicBarrierTest {
 
 		CyclicBarrierTest test = new CyclicBarrierTest();
 		
+		Thread t1 = new Thread(test::criticalSection, "Thread1");
 		
+		Thread t2 = new Thread(test::criticalSection, "Thread2");
 		
-		Thread t1 = new Thread( () -> { test.criticalSection(); }, "Thread1");
-		
-		Thread t2 = new Thread( () -> {	test.criticalSection(); }, "Thread2");
-		
-		Thread t3 = new Thread( () -> {	test.criticalSection(); }, "Thread3");
+		Thread t3 = new Thread(test::criticalSection, "Thread3");
 		
 		
 		t1.start();
@@ -29,11 +27,11 @@ public class CyclicBarrierTest {
 		System.out.println("Test reusing the cyclic barrier");
 		System.out.println();
 		
-		Thread t4 = new Thread( () -> { test.criticalSection(); }, "Thread4");
+		Thread t4 = new Thread(test::criticalSection, "Thread4");
 		
-		Thread t5 = new Thread( () -> {	test.criticalSection(); }, "Thread5");
+		Thread t5 = new Thread(test::criticalSection, "Thread5");
 		
-		Thread t6 = new Thread( () -> {	test.criticalSection(); }, "Thread6");
+		Thread t6 = new Thread(test::criticalSection, "Thread6");
 
 		t4.start();
 		t5.start();
@@ -54,7 +52,7 @@ public class CyclicBarrierTest {
 		try {
 			barrier.await();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		

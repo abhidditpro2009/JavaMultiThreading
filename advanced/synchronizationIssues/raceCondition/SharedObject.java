@@ -1,6 +1,5 @@
 package advanced.synchronizationIssues.raceCondition;
 public class SharedObject {
-
 		private int count = 0;
 
 		public void setCount(int c) {
@@ -15,5 +14,4 @@ public class SharedObject {
 		public int getCount() {
 			return count;
 		}
-
 	}
